@@ -55,7 +55,7 @@
 		<nav class="header-menu">
 			<ul>
 			
-				<li><a href="/">主页</a></li>
+				<li><a href="index.html">主页</a></li>
 	        
 				<li><a href="/tags/随笔/">随笔</a></li>
 	        
@@ -137,7 +137,7 @@
 				<ul style="width: 50%">
 				
 				
-					<li style="width: 50%"><a href="/">主页</a></li>
+					<li style="width: 50%"><a href="index.html">主页</a></li>
 		        
 					<li style="width: 50%"><a href="/tags/随笔/">随笔</a></li>
 		        
@@ -156,118 +156,6 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-README" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="三鑫智慧社区"><a href="#三鑫智慧社区" class="headerlink" title="三鑫智慧社区"></a>三鑫智慧社区</h3><p>前端时间学了vue，后来实在觉得技术总得实践，就直接上手vue2.0。然后花了将近两周时间做了一个后台管理系统的小项目。一开始觉得项目比较小，没必要用vuex所以就没有使用，但是后来发现数据流传输有点麻烦，后续会使用vuex。</p>
-<ul>
-<li><p>背景</p>
-<blockquote>
-<p>通过智慧社区建设，提升社区工作人员工作效率，减轻其工作负担，让工作人员<br>  能够腾出更多时间服务居民，有效提高居民对社区、政府的满意度；创新、优化公共<br>  服务模式及流程，简化办事程序，居民办事便捷了。</p>
-</blockquote>
-</li>
-<li><p>技术栈</p>
-<ul>
-<li>webpack+vue+vuex（核心框架）</li>
-<li><a href="https://www.npmjs.com/package/express" target="_blank" rel="noopener">express</a>（用于模拟后台服务 模拟接口）</li>
-<li><a href="https://www.npmjs.com/package/element-ui" target="_blank" rel="noopener">element ui</a>（用于完成一些基本的效果）<ul>
-<li><a href="https://www.npmjs.com/package/jsonwebtoken" target="_blank" rel="noopener"> jsonwebtoken</a>（用户基本信息加密）</li>
-</ul>
-</li>
-<li><a href="https://www.npmjs.com/package/mockjs" target="_blank" rel="noopener"> mockjs</a>（生成mock数据）</li>
-<li><a href="https://www.npmjs.com/package/axios" target="_blank" rel="noopener"> axios</a>（请求）</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li><p>功能分析与设计</p>
-<ul>
-<li>login (登陆页面)<ul>
-<li>通过用户输入的账号和密码进行 “post” 发送到后台模拟接口,进行验证,如果用户存在已知的数据中,直接进入”index”显示路由页面,否则跳转至“register”提示用户进行注册。</li>
-</ul>
-</li>
-<li>register (注册页面)<ul>
-<li>用户没有账号密码的情况下,在登陆页面要显示注册的按钮,提示用户进行注册,注册完成之后,跳会 “login” 进行登陆。</li>
-</ul>
-</li>
-<li>index(路由切换页面)<ul>
-<li>分为 “一口式受理平台”, “网格化管理平台” , “公共服务平台” 三个模块进行开发。</li>
-<li>“一口式受理平台”: 可以让用户进行报名,报名之后把用户信息写入数据,让用户具有参赛资格,同时管理员可以管理用户,如果有用户不想参加活动,可以进行删除。</li>
-<li>“公共服务平台”:分为信息管理,和活动管理,信息管理中可以把用户填写的数据取出来,发送给后台,写入数据。<br>活动管理中的 邀请居民把参加的用户进行页面渲染,分页,以及用户进行备注, 基本信息中用到图片上传,城市渲染,添加栏目功能,编辑栏目名称,保存并发布之后传送到后台写入数据。</li>
-</ul>
-</li>
-<li>main (页面导航)<ul>
-<li>通过导航列表,进行路由切换,以及侧边栏数据进行更新。</li>
-</ul>
-</li>
-<li>menu (侧边栏)<ul>
-<li>这个区域是通过导航点击之后渲染上去的,导航每个标题切换的时候,数据进行更新变化,重新渲染。</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>开发过程中问题</p>
-<ul>
-<li>路由跳转时个人认为 element ui组件中可以直接在标签上如 :to=”{name:’路由名字’}”,后来发现组件中的标签无法解析,后来经过与朋友讨论,抛开组件,可以加入<router-link :to="{name:'路由名字'}"></router-link>,或者加入点击事件,进行 this.$router.push({name:’路由名字’}),可以解决路由跳转问题。</li>
-<li>图片上传,添加栏目时,一开始直接向后台发送请求,从数据中进行添加栏目,后来发现数据传送有些麻烦,不利于管理和更好的控制,所以项目中添加了vuex更好的进行数据管理。</li>
-<li>弹框的选择是一件非常重要的事情,在“邀请居民”模块中需要为居民进行备注,这个一开始选用的是 element ui 中的MessageBox 弹框 , 需求是要取出文本框中的内容,发送给后台,这个组件的操作全都是放在一个回调函数中类似于 Promise ,上手不太方便,后来经过深思熟虑,采用了Dialog 对话框,直接在结构中加入 input 标签 v-modle 绑定值,取出数据发送给后台,写入数据中,完成了效果.</li>
-</ul>
-</li>
-<li><p>项目运行</p>
-<ul>
-<li>npm run dev </li>
-</ul>
-</li>
-<li><p>说明</p>
-<ul>
-<li>需要改进的有很多，请大家可以多提提意见。后续我会不断改进。</li>
-</ul>
-</li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/04/24/README/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
     <article id="post-git-ssh分享" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -275,12 +163,12 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/04/20/git-ssh分享/">git ssh分享</a>
+      <a class="article-title" href="2018/04/20/git-ssh分享/">Git Ssh分享</a>
     </h1>
   
 
         
-        <a href="/2018/04/20/git-ssh分享/" class="archive-article-date">
+        <a href="2018/04/20/git-ssh分享/" class="archive-article-date">
   	<time datetime="2018-04-20T03:45:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-20</time>
 </a>
         
@@ -300,7 +188,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2018/04/20/git-ssh分享/">展开全文 >></a>
+          <a class="article-more-a" href="2018/04/20/git-ssh分享/">展开全文 >></a>
         </p>
       
 
@@ -337,12 +225,12 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/04/20/hello-world/">Hello EveryBody</a>
+      <a class="article-title" href="2018/04/20/hello-world/">Hello EveryBody</a>
     </h1>
   
 
         
-        <a href="/2018/04/20/hello-world/" class="archive-article-date">
+        <a href="2018/04/20/hello-world/" class="archive-article-date">
   	<time datetime="2018-04-20T03:25:27.620Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-20</time>
 </a>
         
@@ -351,7 +239,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>Welcome to my blog</p>
-<h3 id="Introduce-oneself-to"><a href="#Introduce-oneself-to" class="headerlink" title="Introduce oneself to"></a>Introduce oneself to</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">姓名： 齐贵奥 &amp;&amp; Jaket</span><br><span class="line"></span><br><span class="line">职业： web前端开发工程师</span><br><span class="line"></span><br><span class="line">自我评价: 深度互联网从业人员，对互联网保持高度的  敏 感性和关注度，熟悉开发流程，有很强的 学习能力、需求分析、设计思路，有良好的语言沟通能力和良好的逻辑能力和团队协作能力。</span><br></pre></td></tr></table></figure>
+<h3 id="Introduce-oneself-to"><a href="#Introduce-oneself-to" class="headerlink" title="Introduce oneself to"></a>Introduce oneself to</h3><figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">姓名： 齐贵奥 <span class="meta">&amp;&amp; Jaket</span></span><br><span class="line"></span><br><span class="line">职业： web前端开发工程师</span><br><span class="line"></span><br><span class="line">自我评价: 深度互联网从业人员，对互联网保持高度的  敏 感性和关注度，熟悉开发流程，有很强的 学习能力、需求分析、设计思路，有良好的语言沟通能力和良好的逻辑能力和团队协作能力。</span><br></pre></td></tr></table></figure>
 <h3 id="Technology-stack"><a href="#Technology-stack" class="headerlink" title="Technology stack"></a>Technology stack</h3><ul>
 <li>熟练使用 HTML5/CSS3 及 LESS 和 SASS 等 css 预处理器，有 bootstrap 开发经验</li>
 <li>熟练掌插 JavaScript 语言和 JQuery 库, 熟练使用 Iscroll、Swiper 等插件</li>
@@ -380,7 +268,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2018/04/20/hello-world/">展开全文 >></a>
+          <a class="article-more-a" href="2018/04/20/hello-world/">展开全文 >></a>
         </p>
       
 
