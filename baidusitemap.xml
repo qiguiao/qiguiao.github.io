@@ -3,10 +3,24 @@
 
 
     
+  <url>
+    <loc>http://yoursite.com/2018/04/28/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%B0%81%E8%A3%85request/</loc>
+    <lastmod>2018-04-28T06:22:10.433Z</lastmod>
+    <data>
+        <display>
+        <title>微信小程序封装wx.request()请求</title>
+        <pubTime>2018-04-28T06:21:47.453Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
     
   <url>
     <loc>http://yoursite.com/2018/04/27/React%E5%B0%81%E8%A3%85%E5%80%92%E8%AE%A1%E6%97%B6/</loc>
-    <lastmod>2018-04-27T11:43:44.680Z</lastmod>
+    <lastmod>2018-04-28T06:20:43.790Z</lastmod>
     <data>
         <display>
         <title>React封装倒计时</title>
@@ -18,6 +32,52 @@
     </data>
     </url>
 
+    
+  <url>
+    <loc>http://yoursite.com/2018/04/28/HTTP%EF%BC%8CHTML%E9%97%AE%E9%A2%98%E7%BB%BC%E8%BF%B0/</loc>
+    <lastmod>2018-04-28T06:16:20.000Z</lastmod>
+    <data>
+        <display>
+        <title>HTML问题综述</title>
+        <pubTime>2018-04-28T06:21:47.425Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2018/04/28/React%E5%B0%81%E8%A3%85Icon/</loc>
+    <lastmod>2018-04-28T06:15:26.000Z</lastmod>
+    <data>
+        <display>
+        <title>React封装Icon</title>
+        <pubTime>2018-04-28T06:21:47.446Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2018/04/28/React%E5%B0%81%E8%A3%85Picker/</loc>
+    <lastmod>2018-04-28T06:09:18.000Z</lastmod>
+    <data>
+        <display>
+        <title>React封装Picker，适用于Mobile</title>
+        <pubTime>2018-04-28T06:21:47.449Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
     
     
   <url>
