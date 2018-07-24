@@ -5,9 +5,9 @@
   <subtitle>jaket.qi is a web developer</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://yoursite.com/"/>
+  <link href="https://qiguiao.github.io/"/>
   <updated>2018-07-20T02:22:42.000Z</updated>
-  <id>http://yoursite.com/</id>
+  <id>https://qiguiao.github.io/</id>
   
   <author>
     <name>齐贵奥</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>微信小程序封装组件与引用</title>
-    <link href="http://yoursite.com/2018/07/23/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%B0%81%E8%A3%85%E7%BB%84%E4%BB%B6%E4%B8%8E%E5%BC%95%E7%94%A8/"/>
-    <id>http://yoursite.com/2018/07/23/微信小程序封装组件与引用/</id>
+    <link href="https://qiguiao.github.io/2018/07/23/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%B0%81%E8%A3%85%E7%BB%84%E4%BB%B6%E4%B8%8E%E5%BC%95%E7%94%A8/"/>
+    <id>https://qiguiao.github.io/2018/07/23/微信小程序封装组件与引用/</id>
     <published>2018-07-23T02:29:51.575Z</published>
     <updated>2018-07-20T02:22:42.000Z</updated>
     
@@ -44,8 +44,8 @@
   
   <entry>
     <title>Charles抓包教程</title>
-    <link href="http://yoursite.com/2018/07/23/Charles%E6%8A%93%E5%8C%85%E6%95%99%E7%A8%8B/"/>
-    <id>http://yoursite.com/2018/07/23/Charles抓包教程/</id>
+    <link href="https://qiguiao.github.io/2018/07/23/Charles%E6%8A%93%E5%8C%85%E6%95%99%E7%A8%8B/"/>
+    <id>https://qiguiao.github.io/2018/07/23/Charles抓包教程/</id>
     <published>2018-07-23T02:29:51.549Z</published>
     <updated>2018-07-23T09:44:25.604Z</updated>
     
@@ -67,8 +67,8 @@
   
   <entry>
     <title>微信小程序封装wx.request()请求</title>
-    <link href="http://yoursite.com/2018/04/28/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%B0%81%E8%A3%85request/"/>
-    <id>http://yoursite.com/2018/04/28/微信小程序封装request/</id>
+    <link href="https://qiguiao.github.io/2018/04/28/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%B0%81%E8%A3%85request/"/>
+    <id>https://qiguiao.github.io/2018/04/28/微信小程序封装request/</id>
     <published>2018-04-28T06:21:47.453Z</published>
     <updated>2018-04-28T06:22:10.433Z</updated>
     
@@ -89,8 +89,8 @@
   
   <entry>
     <title>React封装Picker，适用于Mobile</title>
-    <link href="http://yoursite.com/2018/04/28/React%E5%B0%81%E8%A3%85Picker/"/>
-    <id>http://yoursite.com/2018/04/28/React封装Picker/</id>
+    <link href="https://qiguiao.github.io/2018/04/28/React%E5%B0%81%E8%A3%85Picker/"/>
+    <id>https://qiguiao.github.io/2018/04/28/React封装Picker/</id>
     <published>2018-04-28T06:21:47.449Z</published>
     <updated>2018-04-28T06:09:18.000Z</updated>
     
@@ -110,8 +110,8 @@
   
   <entry>
     <title>React封装Icon</title>
-    <link href="http://yoursite.com/2018/04/28/React%E5%B0%81%E8%A3%85Icon/"/>
-    <id>http://yoursite.com/2018/04/28/React封装Icon/</id>
+    <link href="https://qiguiao.github.io/2018/04/28/React%E5%B0%81%E8%A3%85Icon/"/>
+    <id>https://qiguiao.github.io/2018/04/28/React封装Icon/</id>
     <published>2018-04-28T06:21:47.446Z</published>
     <updated>2018-04-28T06:15:26.000Z</updated>
     
@@ -131,8 +131,8 @@
   
   <entry>
     <title>HTML问题综述</title>
-    <link href="http://yoursite.com/2018/04/28/HTTP%EF%BC%8CHTML%E9%97%AE%E9%A2%98%E7%BB%BC%E8%BF%B0/"/>
-    <id>http://yoursite.com/2018/04/28/HTTP，HTML问题综述/</id>
+    <link href="https://qiguiao.github.io/2018/04/28/HTTP%EF%BC%8CHTML%E9%97%AE%E9%A2%98%E7%BB%BC%E8%BF%B0/"/>
+    <id>https://qiguiao.github.io/2018/04/28/HTTP，HTML问题综述/</id>
     <published>2018-04-28T06:21:47.425Z</published>
     <updated>2018-04-28T06:16:20.000Z</updated>
     
@@ -153,8 +153,8 @@
   
   <entry>
     <title>React封装倒计时</title>
-    <link href="http://yoursite.com/2018/04/27/React%E5%B0%81%E8%A3%85%E5%80%92%E8%AE%A1%E6%97%B6/"/>
-    <id>http://yoursite.com/2018/04/27/React封装倒计时/</id>
+    <link href="https://qiguiao.github.io/2018/04/27/React%E5%B0%81%E8%A3%85%E5%80%92%E8%AE%A1%E6%97%B6/"/>
+    <id>https://qiguiao.github.io/2018/04/27/React封装倒计时/</id>
     <published>2018-04-27T09:51:09.048Z</published>
     <updated>2018-04-28T06:20:43.790Z</updated>
     
@@ -174,8 +174,8 @@
   
   <entry>
     <title>Hello EveryBody</title>
-    <link href="http://yoursite.com/2018/04/27/hello-world/"/>
-    <id>http://yoursite.com/2018/04/27/hello-world/</id>
+    <link href="https://qiguiao.github.io/2018/04/27/hello-world/"/>
+    <id>https://qiguiao.github.io/2018/04/27/hello-world/</id>
     <published>2018-04-27T09:46:32.805Z</published>
     <updated>2018-07-23T09:36:43.107Z</updated>
     
