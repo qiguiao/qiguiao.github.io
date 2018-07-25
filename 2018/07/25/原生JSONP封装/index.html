@@ -7,20 +7,20 @@
   
   
   
-  <title>微信小程序封装wx.request()请求 | 齐贵奥</title>
+  <title>原生JSONP封装 | 齐贵奥</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="先封装common方便域名更改 12345module.exports = &amp;#123;  requestPath: &quot;https:&quot;,   //开发 ， 测试 ，生产 ，域名都可以  apisPath: &quot;https:&quot;,  ossImgPath: &quot;http:&quot;&amp;#125;; 封装server.js 12345678910111213141516171819202122232425262728">
+  <meta name="description" content="前言  划一个时代的前端 JSONP   12345678910111213141516171819202122232425262728293031323334353637383940414243function success(data)&amp;#123;    &amp;#125;jsonp(&amp;#123;    url:&apos;https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTA">
 <meta name="keywords" content="齐贵奥，Jaket">
 <meta property="og:type" content="article">
-<meta property="og:title" content="微信小程序封装wx.request()请求">
-<meta property="og:url" content="https://qiguiao.github.io/2018/04/28/微信小程序封装request/index.html">
+<meta property="og:title" content="原生JSONP封装">
+<meta property="og:url" content="https://qiguiao.github.io/2018/07/25/原生JSONP封装/index.html">
 <meta property="og:site_name" content="齐贵奥">
-<meta property="og:description" content="先封装common方便域名更改 12345module.exports = &amp;#123;  requestPath: &quot;https:&quot;,   //开发 ， 测试 ，生产 ，域名都可以  apisPath: &quot;https:&quot;,  ossImgPath: &quot;http:&quot;&amp;#125;; 封装server.js 12345678910111213141516171819202122232425262728">
+<meta property="og:description" content="前言  划一个时代的前端 JSONP   12345678910111213141516171819202122232425262728293031323334353637383940414243function success(data)&amp;#123;    &amp;#125;jsonp(&amp;#123;    url:&apos;https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTA">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-04-28T06:22:10.433Z">
+<meta property="og:updated_time" content="2018-07-20T11:12:54.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="微信小程序封装wx.request()请求">
-<meta name="twitter:description" content="先封装common方便域名更改 12345module.exports = &amp;#123;  requestPath: &quot;https:&quot;,   //开发 ， 测试 ，生产 ，域名都可以  apisPath: &quot;https:&quot;,  ossImgPath: &quot;http:&quot;&amp;#125;; 封装server.js 12345678910111213141516171819202122232425262728">
+<meta name="twitter:title" content="原生JSONP封装">
+<meta name="twitter:description" content="前言  划一个时代的前端 JSONP   12345678910111213141516171819202122232425262728293031323334353637383940414243function success(data)&amp;#123;    &amp;#125;jsonp(&amp;#123;    url:&apos;https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTA">
   
     <link rel="alternative" href="https://juejin.im/user/59720b806fb9a06ba4746f3f" title="齐贵奥" type="application/atom+xml">
   
@@ -223,11 +223,11 @@
         </header>
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-微信小程序封装request" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-原生JSONP封装" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
       <a  href="" class="article-date">
-      <time datetime="2018-04-28T06:21:47.453Z" itemprop="datePublished">2018-04-28</time>
+      <time datetime="2018-07-25T02:31:39.381Z" itemprop="datePublished">2018-07-25</time>
 </a>
 
     </div>
@@ -241,7 +241,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      微信小程序封装wx.request()请求
+      原生JSONP封装
     </h1>
   
 
@@ -259,16 +259,9 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>先封装common方便域名更改</p>
-<figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">module.exports = &#123;</span><br><span class="line"><span class="symbol">  requestPath:</span> <span class="string">"https:"</span>,   <span class="comment">//开发 ， 测试 ，生产 ，域名都可以</span></span><br><span class="line"><span class="symbol">  apisPath:</span> <span class="string">"https:"</span>,</span><br><span class="line"><span class="symbol">  ossImgPath:</span> <span class="string">"http:"</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<p>封装server.js</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> config = <span class="built_in">require</span>(<span class="string">'../common/config.js'</span>);</span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  request: <span class="function"><span class="keyword">function</span> (<span class="params">params</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> signinStorage = wx.getStorageSync(<span class="string">'signinStorage'</span>) || &#123;&#125;;</span><br><span class="line">    <span class="keyword">var</span> url = (params.apis ? config.apisPath : config.requestPath) + params.url;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">      wx.request(&#123;</span><br><span class="line">        url: url, <span class="comment">//仅为示例，并非真实的接口地址</span></span><br><span class="line">        data: params.data || &#123;&#125;,</span><br><span class="line">        method: params.method || <span class="string">'GET'</span>,</span><br><span class="line">        header: &#123;</span><br><span class="line">          <span class="string">'content-type'</span>: <span class="string">'application/json'</span>,</span><br><span class="line">          <span class="comment">// 'X-ECAPI-Authorization':"bearer "+signinStorage.token || '',</span></span><br><span class="line">          <span class="string">'Authorization'</span>: <span class="string">"bearer "</span> + signinStorage.token || <span class="string">''</span></span><br><span class="line">          </span><br><span class="line">        &#125;,</span><br><span class="line">        success: <span class="function"><span class="keyword">function</span> (<span class="params">res</span>) </span>&#123;</span><br><span class="line">          <span class="keyword">if</span> (res.data.error_code == <span class="number">10001</span>) &#123;</span><br><span class="line">            <span class="keyword">var</span> pages = getCurrentPages();</span><br><span class="line">            <span class="keyword">var</span> currentPages = pages[pages.length - <span class="number">1</span>];</span><br><span class="line">            <span class="keyword">var</span> path = currentPages.route.replace(<span class="string">'pages/'</span>, <span class="string">'../'</span>);</span><br><span class="line">            <span class="keyword">var</span> opt = <span class="string">''</span>;</span><br><span class="line">            <span class="keyword">if</span> (currentPages.options) &#123;</span><br><span class="line">              <span class="keyword">for</span> (<span class="keyword">var</span> k <span class="keyword">in</span> currentPages.options) &#123;</span><br><span class="line">                opt += <span class="string">'_a_'</span> + k + <span class="string">'_e_'</span> + currentPages.options[k];</span><br><span class="line">              &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">// _a_  &amp;</span></span><br><span class="line">            <span class="comment">// _e_  =</span></span><br><span class="line">            <span class="comment">// _q_  ?</span></span><br><span class="line">            <span class="keyword">if</span> (opt) &#123;</span><br><span class="line">              opt = opt.replace(<span class="string">'_a_'</span>, <span class="string">''</span>)</span><br><span class="line">              path += <span class="string">'_q_'</span> + opt;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">// wx.redirectTo(&#123;</span></span><br><span class="line">            <span class="comment">//   url:'../login/login?done='+path</span></span><br><span class="line">            <span class="comment">// &#125;)</span></span><br><span class="line">            wx.navigateTo(&#123;</span><br><span class="line">              url: <span class="string">'../login/login?done='</span> + path</span><br><span class="line">            &#125;)</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">          &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            resolve(res.data)</span><br><span class="line">          &#125;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">      &#125;)</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;,</span><br><span class="line">  mobileTest: <span class="regexp">/^1\d&#123;10&#125;$/</span>,</span><br><span class="line">  changeConsignee: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123; &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>调用 </p>
-<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> services = require(<span class="string">'../services/services.js'</span>);</span><br><span class="line"></span><br><span class="line">services.request(&#123;</span><br><span class="line">      url:<span class="string">'api/aa/aa'</span>,   <span class="comment">//api</span></span><br><span class="line">      method:<span class="string">'POST'</span>,     <span class="comment">//请求方式</span></span><br><span class="line">      <span class="keyword">data</span>:&#123;</span><br><span class="line">        page: <span class="keyword">this</span>.<span class="keyword">data</span>.page   <span class="comment">//传入参数</span></span><br><span class="line">      &#125;,</span><br><span class="line">    &#125;).then((<span class="keyword">data</span>)=&gt;&#123;</span><br><span class="line">      </span><br><span class="line">      <span class="comment">// 返回值</span></span><br><span class="line">      </span><br><span class="line">    &#125;)</span><br></pre></td></tr></table></figure>
-<p>说明</p>
-<p>利用Promise封装请求,引入地址方便更换。</p>
-<p>调用方式简单，无需过多操作。</p>
-
+        <p>前言</p>
+<p> 划一个时代的前端 JSONP </p>
+ <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">success</span>(<span class="params">data</span>)</span>&#123;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line">jsonp(&#123;</span><br><span class="line">    url:<span class="string">'https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su'</span>,</span><br><span class="line">    type:<span class="string">'get'</span>,</span><br><span class="line">    data:&#123;</span><br><span class="line">        wd:<span class="string">'jsonp'</span></span><br><span class="line">    &#125;,</span><br><span class="line">    callback :<span class="string">'cb'</span>,</span><br><span class="line">    success:success</span><br><span class="line">&#125;);</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">jsonp</span>(<span class="params">options</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> url = options.url;</span><br><span class="line">    <span class="keyword">var</span> data = options.data;</span><br><span class="line"></span><br><span class="line">    format(data,options,<span class="function"><span class="keyword">function</span>(<span class="params">str,callback</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">var</span> oBody = <span class="built_in">document</span>.getElementsByTagName(<span class="string">'body'</span>)[<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">var</span> oScript = <span class="built_in">document</span>.createElement(<span class="string">'script'</span>);</span><br><span class="line">        oScript.setAttribute(<span class="string">'src'</span>,url+<span class="string">'?'</span>+str + options.callback+<span class="string">'='</span>+callback);</span><br><span class="line">        oBody.appendChild(oScript);</span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="keyword">return</span> options.success;</span><br><span class="line"></span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">format</span>(<span class="params">data,options,callback</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> callbackName = <span class="string">''</span>;</span><br><span class="line">    <span class="keyword">var</span> str = <span class="string">''</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> p <span class="keyword">in</span> data)&#123;<span class="comment">//格式化get提交的参数</span></span><br><span class="line">        str += p+<span class="string">'='</span>+data[p]+<span class="string">'&amp;'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> p <span class="keyword">in</span> options)&#123;</span><br><span class="line">        <span class="keyword">if</span>(options[p] == options.success)&#123;<span class="comment">//取出要返回的函数名</span></span><br><span class="line">            callbackName = p;</span><br><span class="line">            callback &amp;&amp; callback(str,callbackName);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">如果是这么写success:<span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;conosle.log(data);&#125;</span><br><span class="line"></span><br><span class="line">会报一个success is <span class="literal">undefined</span>错误</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -276,13 +269,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a  href="">微信小程序封装wx.request()请求</a></p>
+        <p><span>本文标题:</span><a  href="">原生JSONP封装</a></p>
         <p><span>文章作者:</span><a  href="/" title="访问 齐贵奥 的个人博客">齐贵奥</a></p>
-        <p><span>发布时间:</span>2018年04月28日 - 14时21分</p>
-        <p><span>最后更新:</span>2018年04月28日 - 14时22分</p>
+        <p><span>发布时间:</span>2018年07月25日 - 10时31分</p>
+        <p><span>最后更新:</span>2018年07月20日 - 19时12分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="" title="微信小程序封装wx.request()请求">https://qiguiao.github.io/2018/04/28/微信小程序封装request/</a>
-            <span class="copy-path" data-clipboard-text="原文: https://qiguiao.github.io/2018/04/28/微信小程序封装request/　　作者: 齐贵奥" title=""></span>
+            <span>原始链接:</span><a class="post-url" href="" title="原生JSONP封装">https://qiguiao.github.io/2018/07/25/原生JSONP封装/</a>
+            <span class="copy-path" data-clipboard-text="原文: https://qiguiao.github.io/2018/07/25/原生JSONP封装/　　作者: 齐贵奥" title=""></span>
         </p>
         <p>
             <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
@@ -293,18 +286,9 @@
 
 <nav id="article-nav">
   
-    <a  href="../../../07/23/Charles抓包教程/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          Charles抓包教程
-        
-      </div>
-    </a>
   
-  
-    <a  href="../React封装Picker/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">React封装Picker，适用于Mobile</div>
+    <a  href="../../24/JavaScript24道经典算法/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">JavaScript24道经典算法</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -392,18 +376,16 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a  href="../../../07/23/Charles抓包教程/" title="上一篇: Charles抓包教程">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a  href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a  href="../React封装Picker/" title="下一篇: React封装Picker，适用于Mobile">
+            <a  href="../../24/JavaScript24道经典算法/" title="下一篇: JavaScript24道经典算法">
                 <i class="fa fa-angle-right"></i>
             </a>
         
     </div>
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="../../../07/25/原生JSONP封装/">原生JSONP封装</a></li><li class="post-list-item"><a class="post-list-link" href="../../../07/24/JavaScript24道经典算法/">JavaScript24道经典算法</a></li><li class="post-list-item"><a class="post-list-link" href="../../../07/24/微信小程序Template模板/">微信小程序Template模板</a></li><li class="post-list-item"><a class="post-list-link" href="../../../07/23/微信小程序封装组件与引用/">微信小程序封装组件与引用</a></li><li class="post-list-item"><a class="post-list-link" href="../../../07/23/Charles抓包教程/">Charles抓包教程</a></li><li class="post-list-item"><a class="post-list-link" href="">微信小程序封装wx.request()请求</a></li><li class="post-list-item"><a class="post-list-link" href="../React封装Picker/">React封装Picker，适用于Mobile</a></li><li class="post-list-item"><a class="post-list-link" href="../React封装Icon/">React封装Icon</a></li><li class="post-list-item"><a class="post-list-link" href="../HTTP，HTML问题综述/">HTML问题综述</a></li><li class="post-list-item"><a class="post-list-link" href="../../27/React封装倒计时/">React封装倒计时</a></li><li class="post-list-item"><a class="post-list-link" href="../../27/hello-world/">Hello EveryBody</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="">原生JSONP封装</a></li><li class="post-list-item"><a class="post-list-link" href="../../24/JavaScript24道经典算法/">JavaScript24道经典算法</a></li><li class="post-list-item"><a class="post-list-link" href="../../24/微信小程序Template模板/">微信小程序Template模板</a></li><li class="post-list-item"><a class="post-list-link" href="../../23/微信小程序封装组件与引用/">微信小程序封装组件与引用</a></li><li class="post-list-item"><a class="post-list-link" href="../../23/Charles抓包教程/">Charles抓包教程</a></li><li class="post-list-item"><a class="post-list-link" href="../../../04/28/微信小程序封装request/">微信小程序封装wx.request()请求</a></li><li class="post-list-item"><a class="post-list-link" href="../../../04/28/React封装Picker/">React封装Picker，适用于Mobile</a></li><li class="post-list-item"><a class="post-list-link" href="../../../04/28/React封装Icon/">React封装Icon</a></li><li class="post-list-item"><a class="post-list-link" href="../../../04/28/HTTP，HTML问题综述/">HTML问题综述</a></li><li class="post-list-item"><a class="post-list-link" href="../../../04/27/React封装倒计时/">React封装倒计时</a></li><li class="post-list-item"><a class="post-list-link" href="../../../04/27/hello-world/">Hello EveryBody</a></li></ul>
     
 <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
 

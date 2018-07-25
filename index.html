@@ -231,6 +231,65 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-原生JSONP封装" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="2018/07/25/原生JSONP封装/" class="article-date">
+      <time datetime="2018-07-25T02:31:39.381Z" itemprop="datePublished">2018-07-25</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="2018/07/25/原生JSONP封装/">原生JSONP封装</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>前言</p>
+<p> 划一个时代的前端 JSONP </p>
+ <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">success</span>(<span class="params">data</span>)</span>&#123;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line">jsonp(&#123;</span><br><span class="line">    url:<span class="string">'https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su'</span>,</span><br><span class="line">    type:<span class="string">'get'</span>,</span><br><span class="line">    data:&#123;</span><br><span class="line">        wd:<span class="string">'jsonp'</span></span><br><span class="line">    &#125;,</span><br><span class="line">    callback :<span class="string">'cb'</span>,</span><br><span class="line">    success:success</span><br><span class="line">&#125;);</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">jsonp</span>(<span class="params">options</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> url = options.url;</span><br><span class="line">    <span class="keyword">var</span> data = options.data;</span><br><span class="line"></span><br><span class="line">    format(data,options,<span class="function"><span class="keyword">function</span>(<span class="params">str,callback</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">var</span> oBody = <span class="built_in">document</span>.getElementsByTagName(<span class="string">'body'</span>)[<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">var</span> oScript = <span class="built_in">document</span>.createElement(<span class="string">'script'</span>);</span><br><span class="line">        oScript.setAttribute(<span class="string">'src'</span>,url+<span class="string">'?'</span>+str + options.callback+<span class="string">'='</span>+callback);</span><br><span class="line">        oBody.appendChild(oScript);</span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="keyword">return</span> options.success;</span><br><span class="line"></span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">format</span>(<span class="params">data,options,callback</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> callbackName = <span class="string">''</span>;</span><br><span class="line">    <span class="keyword">var</span> str = <span class="string">''</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> p <span class="keyword">in</span> data)&#123;<span class="comment">//格式化get提交的参数</span></span><br><span class="line">        str += p+<span class="string">'='</span>+data[p]+<span class="string">'&amp;'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> p <span class="keyword">in</span> options)&#123;</span><br><span class="line">        <span class="keyword">if</span>(options[p] == options.success)&#123;<span class="comment">//取出要返回的函数名</span></span><br><span class="line">            callbackName = p;</span><br><span class="line">            callback &amp;&amp; callback(str,callbackName);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">如果是这么写success:<span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;conosle.log(data);&#125;</span><br><span class="line"></span><br><span class="line">会报一个success is <span class="literal">undefined</span>错误</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
     <article id="post-JavaScript24道经典算法" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
