@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="baidu-site-verification" content="L6Lm9d5Crl"/>
+  
+  
+  
+  
+  <title>微信小程序从入门到放弃 Num.1 | 齐贵奥</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="写在前面 每一种事物都有它被发明时，都会有其用处和目的，每一个事物都是自己擅长和适合的领域    开发者工具 微信小程序开发者工具  常用标签 view:  小程序提供view供开发者使用,类似于Html中div  block: 并不是一个组件，它仅仅是一个包装元素，不会在页面中做任何渲染，只接受控制属性。  text:  行内元素标签,类似于 span  项目结构1234567pages">
+<meta name="keywords" content="齐贵奥，Jaket">
+<meta property="og:type" content="article">
+<meta property="og:title" content="微信小程序从入门到放弃 Num.1">
+<meta property="og:url" content="https://qiguiao.github.io/2018/12/27/微信小程序从入门到放弃 Num.1/index.html">
+<meta property="og:site_name" content="齐贵奥">
+<meta property="og:description" content="写在前面 每一种事物都有它被发明时，都会有其用处和目的，每一个事物都是自己擅长和适合的领域    开发者工具 微信小程序开发者工具  常用标签 view:  小程序提供view供开发者使用,类似于Html中div  block: 并不是一个组件，它仅仅是一个包装元素，不会在页面中做任何渲染，只接受控制属性。  text:  行内元素标签,类似于 span  项目结构1234567pages">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-12-27T09:31:07.754Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="微信小程序从入门到放弃 Num.1">
+<meta name="twitter:description" content="写在前面 每一种事物都有它被发明时，都会有其用处和目的，每一个事物都是自己擅长和适合的领域    开发者工具 微信小程序开发者工具  常用标签 view:  小程序提供view供开发者使用,类似于Html中div  block: 并不是一个组件，它仅仅是一个包装元素，不会在页面中做任何渲染，只接受控制属性。  text:  行内元素标签,类似于 span  项目结构1234567pages">
+  
+    <link rel="alternative" href="https://juejin.im/user/59720b806fb9a06ba4746f3f" title="齐贵奥" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.jpg">
+  
+  
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  
+  <link rel="stylesheet" href="../../../../css/style.css">
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+  
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <!-- 加载特效 -->
+    <script src="/js/pace.js"></script>
+    <link href="/css/pace/pace-theme-flash.css" rel="stylesheet" />
+  <script>
+      var yiliaConfig = {
+          fancybox: true,
+          animate: true,
+          isHome: false,
+          isPost: true,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false
+      }
+  </script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+
+        <a href="/" class="profilepic">
+            
+            <img lazy-src="/img/avatar.jpg" class="js-avatar">
+            
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">齐贵奥</a></h1>
+        </hgroup>
+        
+        <p class="header-subtitle">jaket.qi is a web developer</p>
+        
+        
+        
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a  href="../../../../archives/">所有文章</a></li>
+                        
+                            <li><a  href="../../../../about/">关于我</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fl github"  target="_blank" href="https://github.com/qiguiao" title="github">github</a>
+                            
+                                <a class="fl weibo"  target="_blank" href="https://weibo.com/" title="weibo">weibo</a>
+                            
+                                <a class="fl rss"  target="_blank" href="../../../../atom.xml" title="rss">rss</a>
+                            
+                                <a class="fl Sitemap"  target="_blank" href="../../../../sitemap.xml" title="Sitemap">Sitemap</a>
+                            
+                                <a class="fl Google"  target="_blank" href="#" title="Google">Google</a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        
+                    </div>
+                </section>
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://blog.csdn.net/baidu_21483933">csdn</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="https://segmentfault.com/blog/maocg_web">segmentfault</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://www.jianshu.com/users/eb37ef89c746/latest_articles">简书</a>
+                    
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">梅须逊雪三分白，雪却输梅一段香</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">齐贵奥</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                
+                    <img lazy-src="/img/avatar.jpg" class="js-avatar">
+                
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">齐贵奥</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">jaket.qi is a web developer</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="../../../../archives/">所有文章</a></li>
+                
+                    <li><a href="../../../../about/">关于我</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a class="github" target="_blank" href="https://github.com/qiguiao" title="github">github</a>
+                    
+                        <a class="weibo" target="_blank" href="https://weibo.com/" title="weibo">weibo</a>
+                    
+                        <a class="rss" target="_blank" href="../../../../atom.xml" title="rss">rss</a>
+                    
+                        <a class="Sitemap" target="_blank" href="../../../../sitemap.xml" title="Sitemap">Sitemap</a>
+                    
+                        <a class="Google" target="_blank" href="#" title="Google">Google</a>
+                    
+                </div>
+            </nav>
+        </header>
+    </div>
+</nav>
+      <div class="body-wrap"><article id="post-微信小程序从入门到放弃 Num.1" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="" class="article-date">
+      <time datetime="2018-12-27T09:26:07.937Z" itemprop="datePublished">2018-12-27</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      微信小程序从入门到放弃 Num.1
+    </h1>
+  
+
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+
+        
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h3 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h3><ul>
+<li>每一种事物都有它被发明时，都会有其用处和目的，每一个事物都是自己擅长和适合的领域  </li>
+</ul>
+<h3 id="开发者工具"><a href="#开发者工具" class="headerlink" title="开发者工具"></a>开发者工具</h3><ul>
+<li><a href="https://developers.weixin.qq.com/miniprogram/dev/devtools/download.html" target="_blank" rel="noopener">微信小程序开发者工具</a></li>
+</ul>
+<h3 id="常用标签"><a href="#常用标签" class="headerlink" title="常用标签"></a>常用标签</h3><ul>
+<li>view:  小程序提供view供开发者使用,类似于Html中div </li>
+<li>block: 并不是一个组件，它仅仅是一个包装元素，不会在页面中做任何渲染，只接受控制属性。 </li>
+<li>text:  行内元素标签,类似于 span</li>
+</ul>
+<h3 id="项目结构"><a href="#项目结构" class="headerlink" title="项目结构"></a>项目结构</h3><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">pages</span>         <span class="meta">---</span> <span class="string">页面存放</span>   </span><br><span class="line"><span class="string">|     </span></span><br><span class="line"><span class="string">app.js        ---全局的JS 可设置变量供全局使用,   一进入小程序会触发onLaunch生命周期  </span></span><br><span class="line"><span class="string">|</span></span><br><span class="line"><span class="string">app.json      ---pages:[存放页面路由],window:顶部导航的颜色、文字,tabBar:底部导航栏设置,navigateToMiniProgramAppIdList:[要跳转的小程序的appID]  </span></span><br><span class="line"><span class="string">|</span></span><br><span class="line"><span class="string">app.wxss      ---全局样式</span></span><br></pre></td></tr></table></figure>
+<h3 id="编码"><a href="#编码" class="headerlink" title="编码"></a>编码</h3><ul>
+<li><p>创建页面 在app.json中的pages数组 添加 home(自定义)</p>
+<figure class="highlight prolog"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"pages"</span>:[<span class="string">"pages/home/home"</span>]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>多个页面以逗号隔开</p>
+<figure class="highlight prolog"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"pages"</span>:[<span class="string">"pages/home/home"</span>,<span class="string">"pages/login/login"</span>]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>wxml 编写html</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">'hello'</span>&gt;</span>hello 微信小程序<span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>wxss编写css</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.hello</span>&#123;<span class="attribute">color</span>: lime;&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>json配置页面标题</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="attr">"navigationBarTitleText"</span>: <span class="string">"选择班级"</span>&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="生命周期及方法"><a href="#生命周期及方法" class="headerlink" title="生命周期及方法"></a>生命周期及方法</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">Page(</span><br><span class="line">&#123;  <span class="attr">data</span>: &#123;    <span class="attr">text</span>: <span class="string">"This is page data."</span>  &#125;,  </span><br><span class="line">onLoad: <span class="function"><span class="keyword">function</span>(<span class="params">options</span>) </span>&#123;    <span class="comment">// Do some initialize when page load.  &#125;,  </span></span><br><span class="line">onReady: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;    <span class="comment">// Do something when page ready.  &#125;,  </span></span><br><span class="line">onShow: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;    <span class="comment">// Do something when page show.  &#125;,  </span></span><br><span class="line">onHide: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;    <span class="comment">// Do something when page hide.  &#125;,  </span></span><br><span class="line">onUnload: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;    <span class="comment">// Do something when page close.  &#125;,  </span></span><br><span class="line">onPullDownRefresh: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;    <span class="comment">// Do something when pull down  &#125;,  // Event handler.  </span></span><br><span class="line">viewTap: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;    <span class="keyword">this</span>.setData(&#123;      <span class="attr">text</span>: <span class="string">'Set some data for updating view.'</span>    &#125;)  &#125;</span><br><span class="line"></span><br><span class="line">&lt;view <span class="class"><span class="keyword">class</span></span>=<span class="string">'hello'</span> bindtap=<span class="string">"viewTap"</span> &gt;hello &#123;&#123;text&#125;&#125;&lt;<span class="regexp">/view&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="逻辑表达式-以下内容来自W3C"><a href="#逻辑表达式-以下内容来自W3C" class="headerlink" title="逻辑表达式(以下内容来自W3C)"></a>逻辑表达式(以下内容来自W3C)</h3><ul>
+<li><p>wx:for</p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">//在组件上使用 wx:<span class="keyword">for</span> 控制属性绑定一个数组，即可使用数组中各项的数据重复渲染该组件。//默认数组的当前项的下标变量名默认为 <span class="built_in">index</span>，数组当前项的变量名默认为 item。//如不提供 wx:key，会报一个 warning， 如果明确知道该列表是静态，或者不必关注其顺序，可以选择忽略。</span><br><span class="line"></span><br><span class="line">Page(&#123;</span><br><span class="line">  dat<span class="variable">a:</span> &#123;</span><br><span class="line">    array: [&#123;</span><br><span class="line">      message: <span class="string">'foo'</span>,</span><br><span class="line">    &#125;, &#123;</span><br><span class="line">      message: <span class="string">'bar'</span></span><br><span class="line">    &#125;]</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">&lt;<span class="keyword">view</span> wx:<span class="keyword">for</span>=<span class="string">"&#123;&#123;array&#125;&#125;"</span>&gt;</span><br><span class="line">  &#123;&#123;<span class="built_in">index</span>&#125;&#125;: &#123;&#123;item.message&#125;&#125;</span><br><span class="line">&lt;/<span class="keyword">view</span>&gt;</span><br><span class="line"></span><br><span class="line">//使用 wx:<span class="keyword">for</span>-item 可以指定数组当前元素的变量名，使用 wx:<span class="keyword">for</span>-<span class="built_in">index</span> 可以指定数组当前下标的变量名：</span><br><span class="line">&lt;<span class="keyword">view</span> wx:<span class="keyword">for</span>=<span class="string">"&#123;&#123;array&#125;&#125;"</span> wx:<span class="keyword">for</span>-<span class="built_in">index</span>=<span class="string">"idx"</span> wx:<span class="keyword">for</span>-item=<span class="string">"itemName"</span>&gt;</span><br><span class="line">  &#123;&#123;idx&#125;&#125;: &#123;&#123;itemName.message&#125;&#125;</span><br><span class="line">&lt;/<span class="keyword">view</span>&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>wx:if</p>
+<figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">//在框架中，我们用wx:<span class="keyword">if</span>=<span class="string">"&#123;&#123;condition&#125;&#125;"</span>来判断是否需要渲染该代码块：</span><br><span class="line">Page(&#123;</span><br><span class="line">  data: &#123;</span><br><span class="line">    condition:<span class="literal">true</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line">&lt;<span class="built_in">view</span> wx:<span class="keyword">if</span>=<span class="string">"&#123;&#123;condition&#125;&#125;"</span>&gt; True &lt;/<span class="built_in">view</span>&gt;</span><br><span class="line"></span><br><span class="line">//也可以用wx:elif和wx:<span class="keyword">else</span>来添加一个<span class="keyword">else</span>块：</span><br><span class="line"></span><br><span class="line">&lt;<span class="built_in">view</span> wx:<span class="keyword">if</span>=<span class="string">"&#123;&#123;length &gt; 5&#125;&#125;"</span>&gt; <span class="number">1</span> &lt;/<span class="built_in">view</span>&gt;</span><br><span class="line">&lt;<span class="built_in">view</span> wx:elif=<span class="string">"&#123;&#123;length &gt; 2&#125;&#125;"</span>&gt; <span class="number">2</span> &lt;/<span class="built_in">view</span>&gt;</span><br><span class="line">&lt;<span class="built_in">view</span> wx:<span class="keyword">else</span>&gt; <span class="number">3</span> &lt;/<span class="built_in">view</span>&gt;//因为wx:<span class="keyword">if</span>之中的模板也可能包含数据绑定，所以当wx:<span class="keyword">if</span>的条件值切换时，框架有一个局部渲染的过程，因为它会确保条件块在切换时销毁或重新渲染。//同时wx:<span class="keyword">if</span>也是惰性的，如果在初始渲染条件为<span class="literal">false</span>，框架什么也不做，在条件第一次变成真的时候才开始局部渲染。//相比之下，hidden就简单的多，组件始终会被渲染，只是简单的控制显示与隐藏。//一般来说，wx:<span class="keyword">if</span>有更高的切换消耗而hidden有更高的初始渲染消耗。因此，如果需要频繁切换的情景下，用hidden更好，如果在运行时条件不大可能改变则wx:<span class="keyword">if</span>较好。</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>事件</p>
+</li>
+<li><p>事件分为冒泡事件和非冒泡事件冒泡事件：当一个组件上的事件被触发后，该事件会向父节点传递。非冒泡事件：当一个组件上的事件被触发后，该事件不会向父节点传递。</p>
+<p>类型    | 触发条件 |<br>-| -|<br>touchstart|    手指触摸动作开始<br>touchmove    |手指触摸后移动<br>touchcancel    |手指触摸动作被打断，如来电提醒，弹窗<br>touchend    |手指触摸动作结束<br>tap    |手指触摸后马上离开<br>longtap    |手指触摸后，超过350ms再离开</p>
+</li>
+</ul>
+<h3 id="Demo练习"><a href="#Demo练习" class="headerlink" title="Demo练习"></a>Demo练习</h3><ul>
+<li>此时的你已经掌握了构建页面的能力  那么我们来写一个demo吧</li>
+<li>场景 Tab切换框 点击其中一项 当前项背景颜色改变</li>
+</ul>
+<p>1.第一步编写wxml</p>
+<figure class="highlight htmlbars"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">"info-choose"</span>&gt;</span></span></span><br><span class="line"><span class="xml">   <span class="tag">&lt;<span class="name">view</span> <span class="attr">bindtap</span>=<span class="string">"chooselog"</span> </span></span></span><br><span class="line"><span class="xml">         wx:for="</span><span class="template-variable">&#123;&#123;array&#125;&#125;</span><span class="xml">"</span></span><br><span class="line"><span class="xml">         wx:key="</span><span class="template-variable">&#123;&#123;index&#125;&#125;</span><span class="xml">" </span></span><br><span class="line"><span class="xml">         data-select="</span><span class="template-variable">&#123;&#123;item.id&#125;&#125;</span><span class="xml">"</span></span><br><span class="line"><span class="xml">         class="</span><span class="template-variable">&#123;&#123;item.id==choice?<span class="string">"check"</span>:<span class="string">""</span>&#125;&#125;</span><span class="xml">"&gt;</span></span><br><span class="line"><span class="xml">         </span><span class="template-variable">&#123;&#123;item.name&#125;&#125;</span><span class="xml"></span></span><br><span class="line"><span class="xml">   <span class="tag">&lt;/<span class="name">view</span>&gt;</span></span></span><br><span class="line"><span class="xml"><span class="tag">&lt;/<span class="name">view</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+<p>2.第二步编写js</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"> Page(&#123;</span><br><span class="line">    <span class="keyword">data</span>: &#123;</span><br><span class="line">        array:[</span><br><span class="line">          &#123; <span class="string">"name"</span>: <span class="string">"Jaket"</span>,</span><br><span class="line">            <span class="string">"id"</span>:<span class="number">1</span>          </span><br><span class="line">          &#125;,</span><br><span class="line">          &#123;</span><br><span class="line">            <span class="string">"name"</span>: <span class="string">"夹克"</span>,</span><br><span class="line">            <span class="string">"id"</span>: <span class="number">2</span></span><br><span class="line">          &#125;,</span><br><span class="line">          &#123;</span><br><span class="line">            <span class="string">"name"</span>: <span class="string">"夹克哥哥"</span>,</span><br><span class="line">            <span class="string">"id"</span>: <span class="number">3</span></span><br><span class="line">          &#125;,</span><br><span class="line">          &#123;</span><br><span class="line">            <span class="string">"name"</span>: <span class="string">"夹克特"</span>,</span><br><span class="line">            <span class="string">"id"</span>: <span class="number">4</span></span><br><span class="line">          &#125;,  </span><br><span class="line"></span><br><span class="line">        ],</span><br><span class="line">        choice:<span class="number">0</span>,<span class="comment">//判断是否选中</span></span><br><span class="line">    &#125;,</span><br><span class="line"></span><br><span class="line">    chooselog:function(<span class="keyword">data</span>)&#123;</span><br><span class="line">      <span class="keyword">var</span> that=<span class="keyword">this</span>;</span><br><span class="line">      that.setData(&#123;<span class="comment">//把选中值放入判断值</span></span><br><span class="line">        choice : <span class="keyword">data</span>.currentTarget.dataset.id</span><br><span class="line">      &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>3.第三步编写wxss</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.info-choose</span> <span class="selector-tag">view</span>&#123;</span><br><span class="line">    <span class="attribute">width</span>:<span class="number">130</span>rpx;</span><br><span class="line">    <span class="attribute">height</span>:<span class="number">130</span>rpx;</span><br><span class="line">    <span class="attribute">border</span>:<span class="number">1</span>rpx solid <span class="number">#ccc</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.info-choose</span><span class="selector-class">.check</span>&#123;</span><br><span class="line">    <span class="attribute">background</span>:lime;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>下期预告<br>1、template模板的使用</p>
+<p>2、微信API的使用</p>
+<p>3、微信组件 tabBar的使用</p>
+<p>4.Demo checkbox复选</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a  href="">微信小程序从入门到放弃 Num.1</a></p>
+        <p><span>文章作者:</span><a  href="/" title="访问 齐贵奥 的个人博客">齐贵奥</a></p>
+        <p><span>发布时间:</span>2018年12月27日 - 17时26分</p>
+        <p><span>最后更新:</span>2018年12月27日 - 17时31分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="" title="微信小程序从入门到放弃 Num.1">https://qiguiao.github.io/2018/12/27/微信小程序从入门到放弃 Num.1/</a>
+            <span class="copy-path" data-clipboard-text="原文: https://qiguiao.github.io/2018/12/27/微信小程序从入门到放弃 Num.1/　　作者: 齐贵奥" title=""></span>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+<nav id="article-nav">
+  
+  
+    <a  href="../Nginx配置及命令/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Nginx配置及命令</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#写在前面"><span class="toc-number">1.</span> <span class="toc-text">写在前面</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#开发者工具"><span class="toc-number">2.</span> <span class="toc-text">开发者工具</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#常用标签"><span class="toc-number">3.</span> <span class="toc-text">常用标签</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#项目结构"><span class="toc-number">4.</span> <span class="toc-text">项目结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#编码"><span class="toc-number">5.</span> <span class="toc-text">编码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#生命周期及方法"><span class="toc-number">6.</span> <span class="toc-text">生命周期及方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#逻辑表达式-以下内容来自W3C"><span class="toc-number">7.</span> <span class="toc-text">逻辑表达式(以下内容来自W3C)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Demo练习"><span class="toc-number">8.</span> <span class="toc-text">Demo练习</span></a></li></ol>
+</div>
+<style>
+    .left-col .switch-btn {
+        display: none;
+    }
+    .left-col .switch-area {
+        display: none;
+    }
+</style>
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+            $(".switch-btn, .switch-area").fadeOut(300);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+            $(".switch-btn, .switch-area").fadeIn(500);
+        }
+    })
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+        $(".switch-btn, .switch-area").show();
+    }
+</script>
+
+
+
+<div class="share">
+    <div class="bdsharebuttonbox">
+    <a href="#" class="bds_more" data-cmd="more"></a>
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a href="#" class="bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+    <a href="#" class="bds_copy" data-cmd="copy" title="复制网址"></a>
+    <a href="#" class="bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+    </div>
+    <script>
+        window._bd_share_config={
+            "common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+    </script>
+</div>
+
+
+
+
+    
+        <section class="changyan" id="comments">
+  <!--<div id="uyan_frame"></div>-->
+  <div id="SOHUCS"></div>
+  <script charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/changyan.js"></script>
+  <script type="text/javascript">
+    window.changyan.api.config({
+      appid: 'xxxx',
+      conf: 'xxxxxxxxx'
+    });
+  </script>
+</section>
+    
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a  href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        
+            <a  href="../Nginx配置及命令/" title="下一篇: Nginx配置及命令">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="">微信小程序从入门到放弃 Num.1</a></li><li class="post-list-item"><a class="post-list-link" href="../Nginx配置及命令/">Nginx配置及命令</a></li><li class="post-list-item"><a class="post-list-link" href="../../../07/25/原生JSONP封装/">原生JSONP封装</a></li><li class="post-list-item"><a class="post-list-link" href="../../../07/24/JavaScript24道经典算法/">JavaScript24道经典算法</a></li><li class="post-list-item"><a class="post-list-link" href="../../../07/24/微信小程序Template模板/">微信小程序Template模板</a></li><li class="post-list-item"><a class="post-list-link" href="../../../07/23/微信小程序封装组件与引用/">微信小程序封装组件与引用</a></li><li class="post-list-item"><a class="post-list-link" href="../../../07/23/Charles抓包教程/">Charles抓包教程</a></li><li class="post-list-item"><a class="post-list-link" href="../../../04/28/微信小程序封装request/">微信小程序封装wx.request()请求</a></li><li class="post-list-item"><a class="post-list-link" href="../../../04/28/React封装Picker/">React封装Picker，适用于Mobile</a></li><li class="post-list-item"><a class="post-list-link" href="../../../04/28/React封装Icon/">React封装Icon</a></li><li class="post-list-item"><a class="post-list-link" href="../../../04/28/HTTP，HTML问题综述/">HTML问题综述</a></li><li class="post-list-item"><a class="post-list-link" href="../../../04/27/React封装倒计时/">React封装倒计时</a></li><li class="post-list-item"><a class="post-list-link" href="../../../04/27/hello-world/">Hello EveryBody</a></li></ul>
+    
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+
+    <script>
+        $(".post-list").addClass("toc-article");
+        // $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#toc, .switch-btn, .switch-area").toggle();
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+                $(".switch-btn, .switch-area").fadeToggle(300);
+            }
+        })
+    </script>
+
+
+
+
+    <script>
+        
+    </script>
+
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                &copy; 2018 齐贵奥
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank">Hexo &nbsp;&nbsp;</a><a href="https://github.com/maochunguang" target="_blank">Blog</a> by tommy
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" >极客到访数: 
+                            <span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>, </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit">本页阅读量: 
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+
+    </div>
+    
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+
+<script src="../../../../js/main.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var backgroundnum = show images form /source/background/;
+            var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+        })
+    </script>
+
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', '齐贵奥,jaket', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+
+	<script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "//hm.baidu.com/hm.js?齐贵奥,jaket";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+	</script>
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+  <script language="javascript">
+    $(function() {
+        $("a[title]").each(function() {
+            var a = $(this);
+            var title = a.attr('title');
+            if (title == undefined || title == "") return;
+            a.data('title', title).removeAttr('title').hover(
+            function() {
+                var offset = a.offset();
+                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
+                    top: offset.top - a.outerHeight() - 15,
+                    left: offset.left + a.outerWidth()/2 + 1
+                }).fadeIn(function() {
+                    var pop = $(this);
+                    setTimeout(function() {
+                        pop.remove();
+                    }, pop.text().length * 800);
+                });
+            }, function() {
+                $("#anchortitlecontainer").remove();
+            });
+        });
+    });
+</script>
+
+
+  </div>
+</body>
+</html>
